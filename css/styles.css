@@ -125,7 +125,14 @@ body {
     font-size: 1rem;
     line-height: 1.4;
    }
-   
+   .project-item img {
+    width: 100%; /* Fit the image to the width of its container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 700px; /* Limit the maximum width */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better appearance */
+}
+
    
    #bubble-nav {
     position: fixed;
@@ -273,6 +280,84 @@ body {
     transform: scale(1.1); /* Slight enlarge on hover */
    }
    
-   
+/* Timeline Container */
+.timeline {
+    position: relative;
+    margin: 0 auto;
+    padding: 20px 0;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  /* Vertical Line */
+  .timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: #ccc;
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+  
+  /* Timeline Item */
+  .timeline-item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  /* Marker (circle) */
+  .timeline-marker {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    background-color: #007bff;
+    border-radius: 50%;
+    border: 3px solid white;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  
+  /* Timeline Content */
+  .timeline-content {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 45%;
+    z-index: 2;
+  }
+  
+  .timeline-content h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.2rem;
+  }
+  
+  .timeline-content p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 0.95rem;
+  }
+  
+  /* Alternating Content */
+  .timeline-item:nth-child(odd) .timeline-content {
+    text-align: left;
+    margin-right: auto;
+  }
+  
+  .timeline-item:nth-child(even) .timeline-content {
+    text-align: left;
+    margin-left: auto;
+  }
+  
    /*# sourceMappingURL=styles.css.map */
    
